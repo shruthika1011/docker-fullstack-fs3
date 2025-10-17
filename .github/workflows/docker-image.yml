@@ -26,15 +26,15 @@ jobs:
       - name: Build and push backend image
         uses: docker/build-push-action@v5
         with:
-          context: ./Backend
-          file: ./Backend/b.Dockerfile
+          context: ./springbootbackend
+          file: ./springbootbackend/backend.dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/docker-backend-practice:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/docker-b:latest
 
       - name: Build and push frontend image
         uses: docker/build-push-action@v5
         with:
-          context: ./Frontend
-          file: ./Frontend/f.Dockerfile
+          context: ./reactfrontend
+          file: ./reactfrontend/frontend.dockerfile 
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/docker-frontend-practice:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/docker-f:latest
