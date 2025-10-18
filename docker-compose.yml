@@ -15,8 +15,8 @@ services:
   backend:
     container_name: springboot
     build:
-      context: ./STUDENTAPI-SPRINGBOOT
-      dockerfile: ../STUDENTAPI-FULLSTACK/backend.Dockerfile
+      context: ./reactfrontend
+      dockerfile: ../reactfrontend/backend.dockerfile
     ports:
       - "2025:2000"
     depends_on:
@@ -26,8 +26,8 @@ services:
   frontend:
     container_name: react
     build:
-      context: ./STUDENTAPI-REACT
-      dockerfile: ../STUDENTAPI-FULLSTACK/frontend.Dockerfile
+      context: ./springbootbackend
+      dockerfile: ../springbootbackend/frontend.dockerfile
     ports:
       - "3000:80"
     depends_on:
