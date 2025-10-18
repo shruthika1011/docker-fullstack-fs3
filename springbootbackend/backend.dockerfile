@@ -18,6 +18,6 @@ FROM eclipse-temurin:21-jdk
 WORKDIR /lab9-backend
 COPY --from=builder /lab9-backend/target/*.jar lab9-backend.jar
 
-EXPOSE 1778
+EXPOSE 2000
 
 ENTRYPOINT ["java", "-jar", "lab9-backend.jar"]
